@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-echo "CONFIG_SCRIPT"
+echo "LINK_SCRIPT"
 
-ln -s $CONFIG_DIR/.vim ~/.vim
-ln -s $CONFIG_DIR/.vimrc ~/.vimrc
-ln -s $CONFIG_DIR/.tmux.conf ~/.tmux.conf
+ln -s $DOTFILES_DIR/.vim ~/.vim
+ln -s $DOTFILES_DIR/.vimrc ~/.vimrc
+ln -s $DOTFILES_DIR/.tmux.conf ~/.tmux.conf

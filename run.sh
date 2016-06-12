@@ -2,7 +2,8 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export SCRIPT_DIR=$DIR/scripts
-export CONFIG_DIR=$DIR/configurations
+export DOTFILES_DIR=$DIR/dotfiles
+export CONFIG_DIR=$DIR/config
 
 echo "Bootstrapping your OS with Tate's dotfile configuration..."
 
