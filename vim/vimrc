@@ -26,8 +26,13 @@ let mapleader=","
 " jk is escape
 inoremap jk <esc>
 
-" Enable syntax processing
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Turn on solarized dark color scheme for vim
 syntax enable
+set background=dark
+colorscheme gruvbox
 
 " Default 4 spaces when viewing and creating tabs
 set tabstop=4
