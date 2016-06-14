@@ -17,5 +17,10 @@ link_file "$DIR/vim/vim" "$HOME/.vim"
 # TMUX CONFIG
 link_file "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
+# BASH CONFIG
+brew tap homebrew/versions
+brew install bash-completion2
+link_file "$DIR/bash/bash_profile" "$HOME/.bash_profile"
+
 # Install vundle
 vim +PluginInstall +qall

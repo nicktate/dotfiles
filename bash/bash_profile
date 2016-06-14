@@ -1,0 +1,11 @@
+# Link bash completions
+# brew tap homebrew/version
+# brew install bash-completion2
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+    . $(brew --prefix)/share/bash-completion/bash_completion
+fi
+
+# Tab cycles through options
+bind 'set show-all-if-ambiguous on'
+set completion-ignore-case on
+bind 'TAB:menu-complete'
