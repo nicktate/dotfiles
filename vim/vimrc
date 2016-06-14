@@ -17,7 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'sjl/gundo.vim'
 
 call vundle#end()
-filetype plugin indent on 
+filetype plugin indent on
 " END --- Vundle
 
 " Map leader to `,`
@@ -32,7 +32,7 @@ syntax enable
 " Default 4 spaces when viewing and creating tabs
 set tabstop=4
 set softtabstop=4
-set expandtab 
+set expandtab
 
 " Show line numbers
 set number
@@ -44,10 +44,10 @@ set showcmd
 set wildmenu
 
 " Only redraw screen when necessary (faster macros)
-set lazyredraw 
+set lazyredraw
 
 " Highlight matching closures
-set showmatch 
+set showmatch
 
 " Search as you type and highlight matches
 set incsearch
@@ -62,3 +62,15 @@ nnoremap <leader>u :GundoToggle<CR>
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+" allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" strip trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
