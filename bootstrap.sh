@@ -7,6 +7,9 @@ echo "Bootstrapping $(whoami)'s computer"
 # Source utility functions
 . scripts/util.sh
 
+# Install brew
+scripts/brew.sh
+
 # Ensure that vundle submodule is up-to-date
 git submodule init && git submodule update
 
@@ -18,8 +21,6 @@ link_file "$DIR/vim/vim" "$HOME/.vim"
 link_file "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
 # BASH CONFIG
-brew tap homebrew/versions
-brew install bash-completion2
 link_file "$DIR/bash/bash_profile" "$HOME/.bash_profile"
 
 # Install vundle
