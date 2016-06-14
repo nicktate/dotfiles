@@ -1,0 +1,64 @@
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer: Nicholas Tate <ntate22@gmail.com>
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+""" General
+" vIM Improved Mode
+set nocompatible
+filetype off
+
+" BEGIN --- Vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'sjl/gundo.vim'
+
+call vundle#end()
+filetype plugin indent on 
+" END --- Vundle
+
+" Map leader to `,`
+let mapleader=","
+
+" jk is escape
+inoremap jk <esc>
+
+" Enable syntax processing
+syntax enable
+
+" Default 4 spaces when viewing and creating tabs
+set tabstop=4
+set softtabstop=4
+set expandtab 
+
+" Show line numbers
+set number
+
+" Show last command entered at bottom of screen
+set showcmd
+
+" Show visual autocomplete menu for command line
+set wildmenu
+
+" Only redraw screen when necessary (faster macros)
+set lazyredraw 
+
+" Highlight matching closures
+set showmatch 
+
+" Search as you type and highlight matches
+set incsearch
+set hlsearch
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
