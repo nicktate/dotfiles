@@ -14,5 +14,8 @@ git submodule init && git submodule update
 link_file "$DIR/vim/vimrc" "$HOME/.vimrc"
 link_file "$DIR/vim/vim" "$HOME/.vim"
 
+# TMUX CONFIG
+link_file "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
+
 # Install vundle
 vim +PluginInstall +qall
