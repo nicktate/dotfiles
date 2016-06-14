@@ -27,7 +27,10 @@ let mapleader=","
 inoremap jk <esc>
 
 " Sets how many lines of history VIM has to remember
-set history=500
+set history=700
+
+" Fast saving
+nmap <leader>w :w!<cr>
 
 " Turn on solarized dark color scheme for vim
 syntax enable
@@ -68,6 +71,12 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap j gj
 nnoremap k gk
 
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 " allows cursor change in tmux mode
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -79,3 +88,49 @@ endif
 
 " strip trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+
+" Height of the command bar
+set cmdheight=2
+
+" Always show current position
+set ruler
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+""""""""""""""""""""""""""""""
+" => Status line
+""""""""""""""""""""""""""""""
+" Always show the status line
+set laststatus=2
+
+" Format the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+" Remember info about open buffers on close
+set viminfo^=%
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction
