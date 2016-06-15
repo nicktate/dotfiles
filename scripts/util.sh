@@ -6,5 +6,5 @@ link_file () {
 
     # TODO - friendly linking based on file existance
 
-	ln -sf $src $dest
+	ln -snf $src $dest
 }

@@ -13,22 +13,24 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Source utility functions
 . $DIR/scripts/util.sh
 
-# Prompt user for all configuration options
-. $DIR/scripts/configuration.sh
+        # Prompt user for all configuration options
+#        . $DIR/scripts/configuration.sh
 
-# Configure osx
-scripts/osx_setup.sh
+        # Configure osx
+#        scripts/osx_setup.sh
 
-# Install brew
-scripts/brew.sh
+        # Install brew
+#        scripts/brew.sh
 
-# Ensure that submodules are up-to-date
-git submodule init
-git submodule update
+        # Ensure that submodules are up-to-date
+        git submodule init
+        git submodule update
 
 # VIMRC CONFIG
 link_file "$DIR/vim/vimrc" "$HOME/.vimrc"
 link_file "$DIR/vim/vim" "$HOME/.vim"
+echo "ln $DIR/vim/vim $HOME/.vim"
+exit
 
 # TMUX CONFIG
 link_file "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
