@@ -18,3 +18,9 @@ while true; do
         * ) echo "Please enter y/n.";;
     esac
 done
+
+read -p "What is your github email?" email
+git config --global user.email "$email"
+
+read -p "What is your github user name?" name
+git config --global user.name "$name"

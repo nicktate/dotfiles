@@ -3,8 +3,7 @@
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "vim/vim/bundle/gundo.vim"]
 	path = vim/vim/bundle/gundo.vim
-	url = https://github.com/sjl/gundle.vim.git
+    url = https://github.com/sjl/gundo.vim.git
 [submodule "zsh/zprezto"]
 	path = zsh/zprezto
-	url = https://github.com/sorin-ionescu/prezto.git
-    ignore = dirty
+	url = https://github.com/sorin-ionescu/prezto
