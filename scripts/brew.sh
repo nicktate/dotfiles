@@ -9,6 +9,7 @@ fi
 # Tap version, dupes, and cask keg
 brew tap homebrew/versions
 brew tap homebrew/dupes
+brew tap caskroom/fonts
 
 # Update any existing formulas
 brew update
@@ -42,6 +43,9 @@ brew install git-lfs
 brew install htop
 brew install wget
 brew install tmux
+
+# Install fonts
+brew cask install font-inconsolata
 
 # Remove outdated versions from the cellar.
 brew cleanup
