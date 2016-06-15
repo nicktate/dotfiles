@@ -41,6 +41,7 @@ brew install git
 brew install git-lfs
 brew install htop
 brew install wget
+brew install tmux
 
 # Remove outdated versions from the cellar.
 brew cleanup
