@@ -15,3 +15,4 @@ brew cask install keepingyouawake
 brew cask install mysqlworkbench
 brew cask install sequel-pro
 brew cask install spectacle
+brew cask install slack
