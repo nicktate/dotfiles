@@ -39,9 +39,12 @@ link_file "$DIR/bash/bash_profile" "$HOME/.bash_profile"
 link_file "$DIR/zsh/zshrc" "$HOME/.zshrc"
 
 case $TDC_SHELL_CHOICE in
-        [zsh]* ) sudo chsh -s $(which bash);;
-        [bash]* ) sudo chsh -s $(which zsh);;
+        [zsh]* ) sudo chsh -s $(which zsh); . $HOME/.zshrc;;
+        [bash]* ) sudo chsh -s $(which bash); . $HOME/.bash_profile;;
 esac
 
 # Install vundle
 vim +PluginInstall +qall
+
+# Install brew-cask formulas
+scripts/brew-cask.sh
