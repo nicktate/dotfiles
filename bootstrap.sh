@@ -23,7 +23,8 @@ scripts/osx_setup.sh
 scripts/brew.sh
 
 # Ensure that submodules are up-to-date
-git submodule update --init --recursive
+git submodule init
+git submodule update
 
 # VIMRC CONFIG
 link_file "$DIR/vim/vimrc" "$HOME/.vimrc"
