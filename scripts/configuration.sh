@@ -19,8 +19,12 @@ while true; do
     esac
 done
 
-read -p "What is your github email?" email
-git config --global user.email "$email"
+if [[ -z "$(git config --global user.email)" ]]; then
+    read -p "What is your github email?" email
+    git config --global user.email "$email"
+fi
 
-read -p "What is your github user name?" name
-git config --global user.name "$name"
+if [[ -z "$(git config --global user.name)" ]]; then
+    read -p "What is your github user name?" name
+    git config --global user.name "$name"
+fi

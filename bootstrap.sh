@@ -41,14 +41,12 @@ case $TDC_SHELL_CHOICE in
                 link_file "$DIR/zsh/zshrc" "$HOME/.zshrc"
                 link_file "$DIR/zsh/zpreztorc" "$HOME/.zpreztorc"
                 sudo chsh -s $(which zsh);
-                zsh;
                 . $HOME/.zshrc
                 ;;
         [bash]* )
                 echo "bash install..."
                 link_file "$DIR/bash/bash_profile" "$HOME/.bash_profile"
                 sudo chsh -s $(which bash);
-                bash;
                 . $HOME/.bash_profile
                 ;;
         * ) echo "no shell choice";;
