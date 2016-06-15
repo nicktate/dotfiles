@@ -16,11 +16,14 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Prompt user for all configuration options
 . $DIR/scripts/configuration.sh
 
-# Configure osx
-scripts/osx_setup.sh
-
 # Install brew
 scripts/brew.sh
+
+# Install brew-cask formulas
+scripts/brew-cask.sh
+
+# Configure osx
+scripts/osx_setup.sh
 
 # Ensure that submodules are up-to-date
 git submodule init
@@ -54,9 +57,6 @@ esac
 
 # Install vundle
 vim +PluginInstall +qall
-
-# Install brew-cask formulas
-scripts/brew-cask.sh
 
 ###############################################################################
 # Kill affected applications                                                  #

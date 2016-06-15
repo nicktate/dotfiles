@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # ~/.macos — https://mths.be/macos
 
 # Set standby delay to 24 hours (default is 1 hour)
@@ -465,3 +467,16 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 # Expand the print dialog by default
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
+
+###############################################################################
+# iTerm2                                                                      #
+###############################################################################
+
+mkdir -p $DIR/.tmp
+wget "https://raw.githubusercontent.com/hukl/Smyck-Color-Scheme/master/Smyck.itermcolors" --output-document $DIR/.tmp/Smyck.itermcolors
+
+# Install the Solarized Dark theme for iTerm
+open "$DIR/.tmp/Smyck.itermcolors"
+
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
