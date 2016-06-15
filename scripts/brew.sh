@@ -12,7 +12,7 @@ brew upgrade --all
 
 # Install GNU core utilities (those that come with macOS are outdated).
 brew install coreutils
-ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+ln -sf /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 brew install moreutils
 brew install findutils
@@ -22,6 +22,9 @@ brew install gnu-sed --with-default-names
 brew install bash
 brew tap homebrew/versions
 brew install bash-completion2
+
+# Install latest version of zsh
+brew install zsh
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
@@ -34,7 +37,6 @@ brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
-brew install homebrew/php/php56 --with-gmp
 
 # Misc tools
 brew install wget
