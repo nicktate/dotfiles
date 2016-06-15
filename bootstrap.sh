@@ -28,8 +28,8 @@ scripts/osx_setup.sh
 # Ensure that submodules are up-to-date
 git submodule update --init --recursive
 
-# GNUPG CONFIG
-link_file "$DIR/gnupg/gnupg" "$HOME/.gnupg"
+# GPG CONFIG
+link_file "$DIR/gpg/gnupg" "$HOME/.gnupg"
 
 # GIT CONFIG
 cp $DIR/git/gitconfig.template $DIR/git/gitconfig
