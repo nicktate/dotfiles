@@ -26,8 +26,7 @@ scripts/brew-cask.sh
 scripts/osx_setup.sh
 
 # Ensure that submodules are up-to-date
-git submodule init
-git submodule update
+git submodule update --init --recursive
 
 # VIMRC CONFIG
 link_file "$DIR/vim/vimrc" "$HOME/.vimrc"
@@ -36,21 +35,29 @@ link_file "$DIR/vim/vim" "$HOME/.vim"
 # TMUX CONFIG
 link_file "$DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
+# Bash Config
+link_file "$DIR/bash/bash_profile" "$HOME/.bash_profile"
+if ! grep -q $(which bash) "/etc/shells"; then
+    sudo -s 'echo "$(which bash)" >> "/etc/shells"'
+fi
+
+# Zsh Config
+link_file "$DIR/zsh/zprezto" "$HOME/.zprezto"
+$DIR/zsh/bootstrap.sh
+link_file "$DIR/zsh/zshrc" "$HOME/.zshrc"
+link_file "$DIR/zsh/zpreztorc" "$HOME/.zpreztorc"
+if ! grep -q $(which zsh) "/etc/shells"; then
+    sudo -s 'echo "$(which zsh)" >> "/etc/shells"'
+fi
+
 case $TDC_SHELL_CHOICE in
         [zsh]* )
                 echo "zsh install..."
-                link_file "$DIR/zsh/zprezto" "$HOME/.zprezto"
-                $DIR/zsh/bootstrap.sh
-                link_file "$DIR/zsh/zshrc" "$HOME/.zshrc"
-                link_file "$DIR/zsh/zpreztorc" "$HOME/.zpreztorc"
-                sudo chsh -s $(which zsh);
-                . $HOME/.zshrc
+                chsh -s $(which zsh);
                 ;;
         [bash]* )
                 echo "bash install..."
-                link_file "$DIR/bash/bash_profile" "$HOME/.bash_profile"
-                sudo chsh -s $(which bash);
-                . $HOME/.bash_profile
+                chsh -s $(which bash);
                 ;;
         * ) echo "no shell choice";;
 esac
