@@ -1,0 +1,4 @@
+
+# ignore generated gpg key info
+gnupg/*.gpg*
+gnupg/random_seed

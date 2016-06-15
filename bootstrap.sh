@@ -28,6 +28,19 @@ scripts/osx_setup.sh
 # Ensure that submodules are up-to-date
 git submodule update --init --recursive
 
+# GNUPG CONFIG
+link_file "$DIR/gnupg/gnupg" "$HOME/.gnupg"
+
+# GIT CONFIG
+cp $DIR/git/gitconfig.template $DIR/git/gitconfig
+sed -i.bak s/\$\{git\.email\}/"$TDC_GIT_EMAIL"/g $DIR/git/gitconfig
+sed -i.bak s/\$\{git\.user\}/"$TDC_GIT_USER"/g $DIR/git/gitconfig
+rm $DIR/git/gitconfig.bak
+
+link_file "$DIR/git/gitattributes" "$HOME/.gitattributes"
+link_file "$DIR/git/gitignore" "$HOME/.gitignore"
+link_file "$DIR/git/gitconfig" "$HOME/.gitconfig"
+
 # VIMRC CONFIG
 link_file "$DIR/vim/vimrc" "$HOME/.vimrc"
 link_file "$DIR/vim/vim" "$HOME/.vim"

@@ -37,6 +37,7 @@ brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
 # Misc tools
+brew install gpg
 brew install awscli
 brew install git
 brew install git-lfs

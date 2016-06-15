@@ -20,11 +20,15 @@ while true; do
 done
 
 if [[ -z "$(git config --global user.email)" ]]; then
-    read -p "What is your github email?" email
-    git config --global user.email "$email"
+    read -p "What is your github user.email?" email
+    export TDC_GIT_EMAIL=$email
+else
+    export TDC_GIT_EMAIL=$(git config --global user.email)
 fi
 
 if [[ -z "$(git config --global user.name)" ]]; then
-    read -p "What is your github user name?" name
-    git config --global user.name "$name"
+    read -p "What is your github user.name?" name
+    export TDC_GIT_USER=$name
+else
+    export TDC_GIT_USER=$(git config --global user.name)
 fi
