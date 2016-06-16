@@ -44,6 +44,7 @@ brew install git-lfs
 brew install htop
 brew install wget
 brew install tmux
+brew install nvm
 
 # Install fonts
 brew cask install font-inconsolata

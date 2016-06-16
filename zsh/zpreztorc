@@ -33,7 +33,7 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'git' \
   'ssh' \
-  'gnupg' \
+  'gpg' \
   'spectrum' \
   'utility' \
   'completion' \

@@ -16,3 +16,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 
 # AWS Cli completions
 # source /usr/local/share/zsh/site-functions/_aws
+
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
