@@ -36,8 +36,13 @@ brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
-# Misc tools
+# GPG Tools
 brew install gpg
+brew install gpg2
+brew install gpg-agent
+brew install pinentry-mac
+
+# Misc tools
 brew install awscli
 brew install git
 brew install git-lfs
