@@ -51,6 +51,7 @@ brew install wget
 brew install tmux
 brew install nvm
 brew install redis
+brew install mysql
 
 # Install fonts
 brew cask install font-inconsolata
