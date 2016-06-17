@@ -23,6 +23,9 @@ filetype plugin indent on
 " Map leader to `,`
 let mapleader=","
 
+" Let backspace work like normal
+set backspace=indent,eol,start
+
 " jk is escape
 inoremap jk <esc>
 
@@ -39,6 +42,7 @@ colorscheme gruvbox
 
 " Default 4 spaces when viewing and creating tabs
 set tabstop=4
+set shiftwidth=4
 set softtabstop=4
 set expandtab
 
