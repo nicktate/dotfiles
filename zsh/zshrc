@@ -29,3 +29,5 @@ else
 fi
 
 export EDITOR=vim
+
+alias rm="rm -f"
