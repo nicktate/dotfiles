@@ -29,11 +29,12 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'editor' \
   'history' \
+  'history-substring-search' \
   'node' \
   'directory' \
   'git' \
   'ssh' \
-  'gnupg' \
+  'gpg' \
   'spectrum' \
   'utility' \
   'completion' \
