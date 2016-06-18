@@ -78,6 +78,8 @@ esac
 # Install vundle
 vim +PluginInstall +qall
 
+xcode-select --install
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################

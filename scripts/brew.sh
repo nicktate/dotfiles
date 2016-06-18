@@ -21,7 +21,7 @@ ln -sf /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 brew install moreutils
 brew install findutils
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 
 # Update bash to 4.x & completion to 2.x
 brew install bash
@@ -52,6 +52,7 @@ brew install tmux
 brew install nvm
 brew install redis
 brew install mysql
+brew install cocoapods
 
 # Install fonts
 brew cask install font-inconsolata
