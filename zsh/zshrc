@@ -31,3 +31,5 @@ fi
 export EDITOR=vim
 
 alias rm="rm -f"
+
+source ~/.zsh/exports.zsh

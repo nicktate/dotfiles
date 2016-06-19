@@ -53,6 +53,7 @@ brew install nvm
 brew install redis
 brew install mysql
 brew install cocoapods
+brew install heroku-toolbelt
 
 # Install fonts
 brew cask install font-inconsolata
