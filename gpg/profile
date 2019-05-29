@@ -1,0 +1,5 @@
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+  export GPG_AGENT_INFO
+else
+  eval $(gpg-agent --daemon --log-file /tmp/gpg.log --pinentry-program /usr/local/bin/pinentry-mac)
+fi

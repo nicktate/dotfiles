@@ -62,6 +62,9 @@
 	changed = green
 	untracked = cyan
 
+[gpg]
+    program = gpg
+
 [commit]
 
     # https://help.github.com/articles/signing-commits-using-gpg/
@@ -78,5 +81,5 @@
 	textconv = hexdump -v -C
 
 [user]
-	email = ${git.email}
-	name = ${git.user}
+	email = ntate22@gmail.com
+	name = nicktate
