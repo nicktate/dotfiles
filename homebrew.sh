@@ -34,6 +34,15 @@ brew_ioo zsh-completions
 brew_ioo hstr
 brew_ioo docker
 
+# Install fzf
+brew_ioo fzf
+
+# Kubernetes
+brew_ioo kubectl
+brew_ioo kubectx
+brew_ioo kube-ps1
+
+
 # N
 brew ioo n
 sudo mkdir -p /usr/local/n
