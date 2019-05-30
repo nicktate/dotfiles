@@ -34,6 +34,11 @@ brew_ioo zsh-completions
 brew_ioo hstr
 brew_ioo docker
 
+# N
+brew ioo n
+sudo mkdir -p /usr/local/n
+sudo chown -R $(whoami) /usr/local/n
+
 # GPG
 brew_ioo gnupg
 brew_ioo pinentry-mac
