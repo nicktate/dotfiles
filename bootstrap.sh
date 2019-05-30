@@ -7,3 +7,4 @@ $DIR/macos.sh
 $DIR/git.sh
 $DIR/gpg.sh
 $DIR/tmux.sh
+$DIR/vim.sh
