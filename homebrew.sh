@@ -24,42 +24,38 @@ brew_cask_ioo() {
     fi
 }
 
-# Various
-brew_ioo git
-brew_ioo htop
-brew_ioo wget
-brew_ioo tmux
-brew_ioo zsh
-brew_ioo zsh-completions
-brew_ioo hstr
-brew_ioo docker
-
-# Install fzf
-brew_ioo fzf
-
-# Kubernetes
-brew_ioo kubectl
-brew_ioo kubectx
-brew_ioo kube-ps1
-
-
-# N
-brew ioo n
-sudo mkdir -p /usr/local/n
-sudo chown -R $(whoami) /usr/local/n
-
-# GPG
-brew_ioo gnupg
-brew_ioo pinentry-mac
-
 # Install caskroom
-brew tap caskroom/cask
+# brew tap homebrew/cask-cask
 
 brew_cask_ioo google-chrome
 brew_cask_ioo iterm2
 brew_cask_ioo slack
 brew_cask_ioo spectacle
 brew_cask_ioo spotify
+
+# Various
+brew_ioo git
+brew_ioo wget
+brew_ioo tmux
+
+#  brew_ioo htop
+#  brew_ioo zsh
+#  brew_ioo zsh-completions
+#  brew_ioo hstr
+#  brew_ioo docker
+
+# Install fzf
+#  brew_ioo fzf
+
+# Kubernetes
+# brew_ioo kubectl
+# brew_ioo kubectx
+# brew_ioo kube-ps1
+
+
+# GPG
+#  brew_ioo gnupg
+# brew_ioo pinentry-mac
 
 # Remove outdated versions
 brew cleanup
