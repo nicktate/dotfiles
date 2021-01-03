@@ -14,7 +14,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    pinentry-curses
+    pinentry
     pinentry_mac
     alacritty
     vscode
