@@ -19,3 +19,4 @@ biup_cask google-chrome
 biup_cask karabiner-elements
 biup_cask hammerspoon
 biup_cask rectangle
+biup_cask keepingyouawake
