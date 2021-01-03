@@ -9,6 +9,7 @@
     ./program/vscode/vscode.nix
     ./program/tmux/tmux.nix
     ./program/zsh/zsh.nix
+    ./work/home.nix
   ];
 
   home.packages = with pkgs; [
@@ -92,32 +93,6 @@
     # lazygit
     # neofetch
   ];
-
-  programs.ssh = {
-    enable = true;
-	extraConfig = ''
-	  Host github.com
-		User nicktate
-		Hostname github.com
-		PreferredAuthentications publickey
-		IdentityFile /Users/nicholastate/.ssh/github-personal
-    '';
-  };
-
-  programs.git = {
-    enable = true;
-    userName  = "Nicholas Tate";
-    userEmail = "ntate22@gmail.com";
-    signing.key = "EF92251AB53E94A3";
-    signing.signByDefault = true;
-    extraConfig = {
-      url = {
-        "git@github.com:" = {
-          insteadOf = "https://github.com/";
-        };
-      };
-    };
-  };
 
   programs.gpg.enable = true;
   home.file.".gnupg/gpg-agent.conf".text = ''

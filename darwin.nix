@@ -2,15 +2,9 @@
 {
   imports = [
     <home-manager/nix-darwin>
+    ./work/darwin.nix
   ];
 
-  users.users.nicholastate = {
-    home = "/Users/nicholastate";
-    description = "Nicholas Tate";
-    shell = pkgs.zsh;
-  };
-
-  home-manager.users.nicholastate = (import ./home.nix);
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -25,7 +19,6 @@
   system.defaults.dock.showhidden = true;
   system.defaults.dock.mru-spaces = false;
 
-  environment.darwinConfig = "/Users/nicholastate/.config/nixpkgs/darwin.nix";
   services.nix-daemon.enable = false;
   nix.useDaemon = false;
   system.stateVersion = 4;
