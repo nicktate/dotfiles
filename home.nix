@@ -137,6 +137,5 @@ pinentry-program ${pkgs.pinentry-curses}/bin/pinentry-curses
   home.file."Library/Preferences/com.knollsoft.Rectangle.plist".source = ./program/rectangle/settings.plist;
   home.file.".config/karabiner/karabiner.json".source = ./program/karabiner/karabiner.json;
   home.file.".hammerspoon/init.lua".source = ./program/hammerspoon/init.lua;
-  home.file.".hammerspoon/app-management.lua".source = ./program/hammerspoon/app-management.lua;
   home.file.".hammerspoon/hyper.lua".source = ./program/hammerspoon/hyper.lua;
 }

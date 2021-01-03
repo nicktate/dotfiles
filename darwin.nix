@@ -11,11 +11,13 @@
   };
 
   home-manager.users.nicholastate = (import ./home.nix);
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     pinentry-curses
-    pinentry_mac
+    # pinentry_mac
     alacritty
+    vscode
   ];
 
   system.defaults.dock.autohide = true;

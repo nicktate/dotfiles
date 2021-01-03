@@ -43,6 +43,7 @@ in {
         . ~/.nix-profile/etc/profile.d/hm-session-vars.sh
       fi
       export PATH=$PATH:/run/current-system/sw/bin
+      export PATH=$PATH:/usr/local/bin
 
       # Load environment variables from a file; this approach allows me to not
       # commit secrets like API keys to Git

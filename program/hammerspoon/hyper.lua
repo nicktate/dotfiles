@@ -12,6 +12,7 @@
 -- https://thesweetsetup.com/oopsiethings-applescript-for-things-on-mac/
 
 local hyper = hs.hotkey.modal.new({}, nil)
+hs.application.enableSpotlightForNameSearches(true)
 
 hyper.pressed  = function() hyper:enter() end
 hyper.released = function() hyper:exit() end
@@ -20,17 +21,22 @@ hyper.released = function() hyper:exit() end
 -- Bind the Hyper key to the hammerspoon modal
 hs.hotkey.bind({}, 'F19', hyper.pressed, hyper.released)
 
-hyper.launch = function(app)
-  hs.application.launchOrFocusByBundleID(app.bundleID)
-end
-
 hyper.showHide = function(app) 
   local a = hs.application.find(app.bundleID)
+  if not a then
+    a = hs.application.open(app.bundleID, 3, true)
+    a:activate()
+    return
+  end
 
-  if a then
-    a:kill()
+  if a:isHidden() then
+      a:activate()
   else
-    hyper.launch(app)
+    if app.rules and app.rules.kill then
+      a:kill()
+    else
+      a:hide()
+    end
   end
 end
 
@@ -40,8 +46,9 @@ end
 --   ['com.culturedcode.ThingsMac'] = {
 --     bundleID = 'com.culturedcode.ThingsMac',
 --     hyper_key = 't',
---     tags = {'planning', 'review'},
---     local_bindings = {',', '.'}
+--     rules = {
+--       kill: false
+--     }
 --   },
 -- }
 hyper.start = function(config_table)
@@ -50,29 +57,6 @@ hyper.start = function(config_table)
     -- Apps that I want to jump to
     if app.hyper_key then
       hyper:bind({}, app.hyper_key, function() hyper.showHide(app); end)
-    end
-
-    -- I use hyper to power some shortcuts in different apps If the app is closed
-    -- and I press the shortcut, open the app and send the shortcut, otherwise
-    -- just send the shortcut.
-    if app.local_bindings then
-      hs.fnutils.map(app.local_bindings, function(key)
-        hyper:bind({}, key, nil, function()
-          if hs.application.get(app.bundleID) then
-            hs.eventtap.keyStroke({'cmd','alt','shift','ctrl'}, key)
-          else
-            hyper.launch(app)
-            hs.timer.waitWhile(
-              function()
-                return not hs.application.get(app.bundleID):isFrontmost()
-              end,
-              function()
-                hs.eventtap.keyStroke({'cmd','alt','shift','ctrl'}, key)
-              end
-            )
-          end
-        end)
-      end)
     end
   end)
 end
