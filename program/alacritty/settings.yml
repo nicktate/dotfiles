@@ -1,0 +1,26 @@
+# env:
+  #TERM: xterm-256-color
+
+background_opacity: 0.85
+window:
+  startup_mode: Maximized
+  decorations: buttonless
+  padding:
+    x: 10
+    y: 10
+
+font:
+  size: 12.0
+  use_thin_strokes: true
+
+# font = {
+#   size = 12.0;
+#   use_thin_strokes = true;
+
+#   normal.family = "FiraCode Nerd Font";
+#   bold.family = "FiraCode Nerd Font";
+#   italic.family = "FiraCode Nerd Font";
+# };
+
+# key_bindings:
+#  - { key: Return, mods: Shift, action: ToggleFullscreen }
