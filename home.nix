@@ -27,6 +27,7 @@
     yarn
     rustup
     tmux
+    vault
 
     kubectl
     fd
@@ -35,6 +36,8 @@
     docker-compose
     mdcat
     doctl
+    buildpack
+    terraform_0_13
 
     # Utils
     # age
